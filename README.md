@@ -1,7 +1,6 @@
-## NodeJs
+# NodeJs
 
-# Crear un proyecto basico y otros comandos
-
+### Crear un proyecto
 
 `npm init -y`
 
