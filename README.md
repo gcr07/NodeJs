@@ -56,10 +56,10 @@ web3.eth.getGasPrice(function(err,res){console.log(res*21000)})
 ```
 
 
+# Paginas que reolvieron errores
 
-
-
-
+Resolvio un error de importaciones
+>https://exerror.com/uncaught-syntaxerror-cannot-use-import-statement-outside-a-module-when-importing-ecmascript-6/
 
 
 
