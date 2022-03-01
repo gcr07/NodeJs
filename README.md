@@ -105,14 +105,25 @@ deploy();
 //console.log(web3.utils.toWei('1', 'ether'))// convierte 1 ether a wei
 ```
 
+## Crear una wallet desde codigo 
+
+```
 
 
-# Paginas que reolvieron errores
+```
+
+
+
+
+# Paginas que reolvieron errores 
 
 Resolvio un error de importaciones
 >https://exerror.com/uncaught-syntaxerror-cannot-use-import-statement-outside-a-module-when-importing-ecmascript-6/
 
+# Paginas con ejemplos y cosas interesates 
 
+Cabe destacar que este repositorio y todos son una recopilacion de interner de lo que voy estudiando se podria decir mis notas
+>https://github.com/grinsteindavid/web3-javascript-etherium-examples
 
 
 
