@@ -55,6 +55,48 @@ web3.eth.getBalance("0x8A6c9cEa0f04f7e8D8f345d2Ec57e7eED465F678", function(err, 
 web3.eth.getGasPrice(function(err,res){console.log(res*21000)})
 ```
 
+## Ethereum transacciones con Web3
+
+```
+const Web3 = require('web3')
+const urlRpc = 'nodemolaris'; 
+
+const web3 = new Web3(urlRpc)
+
+addressFrom = '0x8A6c9c57e7eED465F678'
+addressTo = '0x12FcCbf37a17895B83AA011'
+
+const privKey = '952315'
+
+
+
+//Create transaction
+
+const deploy = async () => {
+   console.log(`Attempting to make transaction from ${addressFrom} to ${addressTo}`);
+
+   const createTransaction = await web3.eth.accounts.signTransaction(
+      {
+         from: addressFrom,
+         to: addressTo,
+         value: web3.utils.toWei('1', 'ether'),
+         gas: '21000',
+      },privKey);
+
+console.log("imprimiendo createTransaction")
+console.log(createTransaction)
+
+// Deploy transaction
+   const createReceipt = await web3.eth.sendSignedTransaction(createTransaction.rawTransaction);
+   console.log(`Transaction successful with hash: ${createReceipt.transactionHash}`);
+}; // Cierre de la llave principal
+
+deploy();
+
+//console.log(web3.utils.toWei('1', 'ether'))// convierte 1 ether a wei
+```
+
+
 
 # Paginas que reolvieron errores
 
