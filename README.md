@@ -21,6 +21,15 @@
 `npm install -g	o --global	Instala el paquete en el sistema, sin asociarlo al proyecto`
 
 ## Web3
+```
+npm install web3
+```
+
+## Install solidity compiler 
+```
+npm install solc
+```
+
 
 ### Conexion Basica
 
