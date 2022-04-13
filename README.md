@@ -256,3 +256,38 @@ const no puede modificarse ni volver a declararse
 Esto significa que el valor de una variable declarada con const s el mismo dentro de su ámbito. No se puede actualizar ni volver a declarar. Así que si declaramos una variable con const, no podemos hacer esto:
 
 >https://www.freecodecamp.org/espanol/news/var-let-y-const-cual-es-la-diferencia/#:~:text=Las%20variables%20var%20pueden%20ser,parte%20superior%20de%20su%20%C3%A1mbito.
+
+
+## try/catch
+
+Bueno, la forma en que esto funciona es que el código dentro del trybloque se ejecuta y se prueba para detectar errores. Si se lanza una excepción, la ejecución del código dentro del trybloque se detiene y la computadora "salta" a las líneas de código dentro del catchbloque
+
+
+
+>Tenga en cuenta que JavaScript le permite escribir código que se ejecuta sin importar si se lanza una excepción dentro del trybloque. Estas líneas de códigos deben colocarse dentro de un finallybloque. No lo usarás en este tutorial, pero nunca sabes cuándo es útil
+
+## Operador de comparacion estricto (===)
+
+
+El operador de estricta igualdad (===) revisa si dos operandos son iguales y produce un resultado Booleano. A diferencia del operador de igualdad regular (==), el operador de estricta igualdad siempre considera que los operandos de distinto tipo de valor son diferentes y nunca similares.
+
+Ejemplo:
+
+``` 
+console.log(1 === 1);
+// expected output: true
+
+console.log('hello' === 'hello');
+// expected output: true
+
+console.log('1' ===  1);
+// expected output: false
+
+console.log(0 === false);
+// expected output: false
+
+```
+
+
+
+
