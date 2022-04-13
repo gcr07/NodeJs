@@ -142,7 +142,9 @@ Cabe destacar que este repositorio y todos son una recopilacion de interner de l
 >https://github.com/grinsteindavid/web3-javascript-etherium-examples
 
 
-# Java script funciones asincronas asyc await
+# Java script 
+
+## Funciones asincronas asyc await
 
 Para definir una funcion asincrona se usa "async" antes de la funcion por ejmeplo:
 
@@ -155,3 +157,102 @@ async function getOracleContract (web3js) {
 
 ```
 
+## Diferencia entre var,let y const
+
+Las declaraciones ***var*** tienen un ámbito global o un ámbito función/local, mientras que ***let y const*** tienen un ámbito de bloque.
+
+### VAR 
+
+El ámbito es global cuando una variable var se declara fuera de una función. Esto significa que cualquier variable que se declare con var fuera de una función está disponible para su uso en toda la pantalla.
+
+var tiene un ámbito local cuando se declara dentro de una función. Esto significa que está disponible y solo se puede acceder a ella dentro de esa función.
+
+Ejemplo:
+
+```
+    var tester = "hey, hola";
+    
+    function nuevaFuncion() {
+        var hola = "hola";
+    }
+    console.log(hola); // error: hola is not defined
+```
+
+### Problema con var
+
+```
+    var saludar = "hey, hola";
+    var tiempos = 4;
+
+    if (tiempos > 3) {
+        var saludar = "dice Hola tambien"; 
+    }
+    
+    console.log(saludar) // "dice Hola tambien"
+```
+>Por lo tanto, como tiempos > 3 devuelve true, saludar se redefine para "dice Hola tambien". Aunque esto no es un problema si quieres redefinir saludar a conciencia, se convierte en un problema cuando no te das cuenta de que la variable saludar ha sido definida antes.
+Si has utilizado saludar en otras partes de tu código, puede que te sorprenda la salida que puedes obtener. Esto probablemente causará muchos errores en tu código. Por eso son necesarios let y const
+
+## LET
+
+let es ahora preferible para la declaración de variables. No es una sorpresa, ya que es una mejora de las declaraciones con var. También resuelve el problema con var que acabamos de cubrir. Consideremos por qué esto es así.
+
+let tiene un ámbito de bloque
+Un bloque es un trozo de código delimitado por {}. Un bloque vive entre llaves. Todo lo que está dentro de llaves es un bloque.
+
+Así que una variable declarada en un bloque con let  solo está disponible para su uso dentro de ese bloque. Permíteme explicar esto con un ejemplo:
+
+
+```
+let saludar = "dice Hola";
+   let tiempos = 4;
+
+   if (tiempos > 3) {
+        let hola = "dice Hola tambien";
+        console.log(hola);// "dice Hola tambien"
+    }
+   console.log(hola) // hola is not defined
+
+``` 
+
+let puede modificarse pero no volver a declararse.
+Al igual que var,  una variable declarada con let puede ser actualizada dentro de su ámbito. A diferencia de var, una variable let no puede ser re-declarada dentro de su ámbito. Así que mientras esto funciona:
+
+```
+   let saludar = "dice Hola";
+    saludar = "dice Hola tambien";
+```
+
+***esto devolverá un error:***
+
+```  
+ let saludar = "dice Hola";
+ let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
+```
+
+***Sin embargo si  se define en diferentes ambitos***
+
+```
+    let saludar = "dice Hola";
+    if (true) {
+        let saludar = "dice Hola tambien";
+        console.log(saludar); // "dice Hola tambien"
+    }
+    console.log(saludar); // "dice Hola
+```
+
+## Hoisting de let
+
+Al igual que  var, las declaraciones let se elevan a la parte superior. A diferencia de var que se inicializa como undefined, la palabra clave let no se inicializa. Sí que si intentas usar una variable let antes de declararla, obtendrás un Reference Error.
+
+## Const
+
+Las variables declaradas con const mantienen valores constantes. Las declaraciones const similitudes con las declaraciones let.
+
+Las declaraciones const tienen un ámbito de bloque
+Al igual que las declaraciones let, solamente se puede acceder a las declaraciones const dentro del bloque en el que fueron declaradas.
+
+const no puede modificarse ni volver a declararse
+Esto significa que el valor de una variable declarada con const s el mismo dentro de su ámbito. No se puede actualizar ni volver a declarar. Así que si declaramos una variable con const, no podemos hacer esto:
+
+>https://www.freecodecamp.org/espanol/news/var-let-y-const-cual-es-la-diferencia/#:~:text=Las%20variables%20var%20pueden%20ser,parte%20superior%20de%20su%20%C3%A1mbito.
