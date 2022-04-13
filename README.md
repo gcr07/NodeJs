@@ -142,4 +142,16 @@ Cabe destacar que este repositorio y todos son una recopilacion de interner de l
 >https://github.com/grinsteindavid/web3-javascript-etherium-examples
 
 
+# Java script funciones asincronas asyc await
+
+Para definir una funcion asincrona se usa "async" antes de la funcion por ejmeplo:
+
+```
+async function getOracleContract (web3js) {
+    const networkId = await web3js.eth.net.getId();
+    return new web3js.eth.Contract(OracleJSON.abi, OracleJSON.networks[networkId].address) //instance del contrato
+}
+
+
+```
 
