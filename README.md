@@ -287,6 +287,58 @@ console.log(0 === false);
 // expected output: false
 
 ```
+## axios un request para js
+
+```
+npm install axios
+```
+
+Ejemplo 
+
+``` 
+async function retrieveLatestEthPrice () {
+  const resp = await axios({
+    url: 'https://api.binance.com/api/v3/ticker/price',
+    params: {
+      symbol: 'ETHUSDT'
+    },
+    method: 'get'
+  })
+  return resp.data.price
+}
+```
+## Returning multiple values in JavaScript
+
+```
+function myAwesomeFunction () {
+  const one = '1'
+  const two = '2'
+  return { one, two }
+}
+```
+
+## setInterval()
+
+The setInterval() method calls a function at specified intervals (in milliseconds).
+
+```
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const date = new Date();
+document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+}
+
+```
+
+## Encadenar funciones JAvascript
+
+Note: Here's a simple example of how you can chain two functions in JavaScript: firstFunction().secondFunction(). The way this works is that firstFunction returns an object that implements secondFunction().
+
+```
+await callerContract.methods.updateEthPrice().send({ from: ownerAddress })
+```
+
 
 
 
